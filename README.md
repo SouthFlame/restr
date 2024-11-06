@@ -84,8 +84,9 @@ python train_restr.py --data_dir ./data/referit/referit_480_batch --set trainval
 ## Evaluation
 ```
 cd eval
-python evaluate.py --data_dir ../data/mscoco/Gref_batch --restore_refseg ../weights/test --set val --iters 25000 --input-size 480,480 --is_vis
+python evaluate.py --data_dir ../data/mscoco/Gref_batch --restore_refseg ../weights/to/ --set val --iters 400000 --is_vis
 ```
+
 
 ## Citation
 ```

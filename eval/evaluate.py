@@ -222,7 +222,7 @@ def main():
 
     dataset_name = ((args.data_dir).split("/")[-1]).split("_")[0]
     print("Training dataset: {}".format(dataset_name))
-    print(args.restore_refseg+"/"+dataset_name+ "_" +str(args.iters)+".pth")
+    print(args.restore_refseg+"/"+osp.basename(args.restore_refseg)+ "_" +str(args.iters)+".pth")
 
     # Create network.
     cfg = config.load_config()
@@ -232,7 +232,7 @@ def main():
         
     for i_iter in args.iters:
 
-        weight_path_vis = args.restore_refseg+"/"+dataset_name+"_"+str(i_iter)+".pth"
+        weight_path_vis = args.restore_refseg+"/"+osp.basename(args.restore_refseg)+"_"+str(i_iter)+".pth"
         saved_state_dict_vis = torch.load(weight_path_vis)
 
 
