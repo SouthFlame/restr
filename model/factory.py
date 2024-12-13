@@ -47,8 +47,6 @@ def create_vit(v_model_cfg):
         model.load_state_dict(filtered_dict, strict=True)
     elif "deit" in backbone:
         load_pretrained(model, default_cfg, filter_fn=checkpoint_filter_fn)
-    elif "dino" in backbone:
-        load_pretrained(model, default_cfg, filter_fn=checkpoint_filter_fn)
     else:
         load_custom_pretrained(model, default_cfg)
 
